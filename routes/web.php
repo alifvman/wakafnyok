@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::group(['as' => 'Home.'], function () {
     Route::get('/', 'HomeController@index')->name('index');
 });
+
+Route::group(['prefix' => 'Wakaf', 'as' => 'Wakaf.'], function () {
+    Route::get('/Masjid', 'WakafController@masjid')->name('masjid');
+});
