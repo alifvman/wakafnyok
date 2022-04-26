@@ -78,7 +78,7 @@
   			background-image: url("{{ asset('img/bg2.png') }}");
   			width: 100%;
   			height: auto;
-  			background-size: 150% 100%;
+  			background-size: auto 100%;
   		}
   		.title-tk{
   			position: absolute;
@@ -589,8 +589,8 @@
 							<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 420px;">
 								<div class="form-group" style="padding: 5px;">
 									<img src="{{ asset('img/wakaf_mesjid.png') }}" class="img-fluid" style="padding: 5px;">
-									<p class="t-psw">Wakaf renovasi Masjid</p>
-									<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia.Mereka membutuhkan makanan dan pakaian</p>
+									<p class="t-psw" style="padding-bottom: 33px;">Wakaf renovasi Masjid</p>
+									<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaian</p>
 									<input type="range" name="" min="0" value="50" max="100" step="1" class="form-control" style="padding: 5px">
 									<div class="row" align="center">
 										<div class="col-8" align="left">
@@ -600,9 +600,11 @@
 											<p class="text-target" style="padding-right: 5px;">75%</p>
 										</div>
 									</div>
-									<div align="center" style="padding-bottom: 20px;">
-										<button class="btn-wakaf">Wakaf Sekarang</button>
-									</div>
+									<a href="{{ route('Wakaf.masjid') }}">
+										<div align="center" style="padding-bottom: 20px;">
+											<button class="btn-wakaf">Wakaf Sekarang</button>
+										</div>
+									</a>
 								</div>						
 							</div>
 						</div>
