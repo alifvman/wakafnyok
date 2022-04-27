@@ -50,7 +50,7 @@
 	  			font-family: 'Poppins';
 				font-style: normal;
 				font-weight: 700;
-				font-size: 35px;
+				font-size: 30px;
 				line-height: 52px;
 
 				color: #333333;
@@ -205,11 +205,11 @@
 			<div class="container" style="padding-top: 70px;">
 				<div class="row">
 					<div class="col-7">
-						<img src="{{ asset('img/wakaf_mesjid.png') }}" class="img-fluid" style="width: 100%;">
+						<img src="{{ asset('img/wakaf_nasional.png') }}" class="img-fluid" style="width: 100%;">
 					</div>
 					<div class="col-5" align="left" style="padding-left: 75px;">
-						<strong><p class="title-wakaf">Wakaf Renovasi Pembangunan Masjid</p></strong>
-						<p class="text-map"><i class="fa fa-map-marker" aria-hidden="true"></i> Klender, Jakarta Timur</p>
+						<strong><p class="title-wakaf">Gerakan Nasional Wakaf Uang</p></strong>
+						<p class="text-map"><i class="fa fa-map-marker" aria-hidden="true"></i> DKI Jakarta</p>
 						<hr style="color: #219F94;">
 						<img src="{{ asset('img/logo1.png') }}" class="image-fluid">
 					</div>

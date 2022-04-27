@@ -576,9 +576,11 @@
 											<p class="text-target" style="padding-right: 5px;">75%</p>
 										</div>
 									</div>
-									<div align="center" style="padding-bottom: 20px;">
-										<button class="btn-wakaf">Wakaf Sekarang</button>
-									</div>
+									<a href="{{ route('Wakaf.index') }}">
+										<div align="center" style="padding-bottom: 20px;">
+											<button class="btn-wakaf">Wakaf Sekarang</button>
+										</div>
+									</a>
 								</div>						
 							</div>
 						</div>
@@ -626,9 +628,11 @@
 											<p class="text-target" style="padding-right: 5px;">75%</p>
 										</div>
 									</div>
-									<div align="center" style="padding-bottom: 20px;">
-										<button class="btn-wakaf">Wakaf Sekarang</button>
-									</div>
+									<a href="{{ route('Wakaf.nasional') }}">
+										<div align="center" style="padding-bottom: 20px;">
+											<button class="btn-wakaf">Wakaf Sekarang</button>
+										</div>
+									</a>
 								</div>						
 							</div>
 						</div>
