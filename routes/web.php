@@ -25,4 +25,5 @@ Route::group(['prefix' => 'Wakaf', 'as' => 'Wakaf.'], function () {
     Route::get('/', 'WakafController@index')->name('index');
     Route::get('/Masjid', 'WakafController@masjid')->name('masjid');
     Route::get('/Nasional', 'WakafController@nasional')->name('nasional');
+    Route::post('Payment', 'WakafController@payment')->name('payment');
 });

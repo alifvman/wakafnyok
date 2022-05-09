@@ -28,4 +28,18 @@ class WakafController extends Controller
 
     }
 
+    public function payment(Request $request)
+    {
+
+        return view('wakaf.payment')->with([
+            'nominal'   => $request->nominal,
+            'metode'    => $request->metode,
+            'nama'      => $request->nama,
+            'email'     => $request->email,
+            'no_hp'     => $request->no_hp,
+            'doa'       => $request->doa,
+        ]);
+
+    }
+
 }

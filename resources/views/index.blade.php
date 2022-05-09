@@ -7,29 +7,19 @@
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/logo.png') }}" />
     <!-- Bootstrap CSS -->
     <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:900,800,700,600,500,400,300,200,100&display=swap" rel="stylesheet">
+
+  	<!-- <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> -->
   	<style type="text/css">
   		.a-header{
   			text-decoration: none;
 			font-family: 'Poppins';
 			font-style: normal;
-			font-weight: 600;
-			font-size: 15px;
-			line-height: 30px;
-			color: #219F94;
-  		}
-  		.b-header{
-  			font-family: 'Poppins';
-			font-style: normal;
 			font-weight: 500;
 			font-size: 15px;
 			line-height: 30px;
-			/* identical to box height */
-
-
-			color: #FFFFFF;
-  			background: #219F94;
-			border-radius: 25px;
+			color: #219F94;
   		}
   		.m-text{
   			font-family: 'Poppins';
@@ -45,7 +35,7 @@
   		.m-text-2{
   			font-family: 'Poppins';
 			font-style: normal;
-			font-weight: 500;
+			font-weight: 400;
 			font-size: 13px;
 			text-align: center;
 			padding-top: 20px;
@@ -67,6 +57,7 @@
 			text-align: center;
 
 			color: #FFFFFF;
+			border: 0;
   		}
   		.bg1{
   			background-image: url("{{ asset('img/bg.png') }}");
@@ -88,7 +79,7 @@
 			font-family: 'Poppins';
 			font-style: normal;
 			font-weight: 600;
-			font-size: 20px;
+			font-size: 18px;
 			line-height: 30px;
 			/* identical to box height */
 
@@ -100,18 +91,18 @@
 			font-style: normal;
 			font-weight: 700;
 			font-size: 35px;
-			line-height: 68px;
 
 			color: #333333;
+			padding-top: 30px;
   		}
   		.text-platform{
 			font-family: 'Poppins';
 			font-style: normal;
-			font-weight: 500;
+			font-weight: 400;
 			font-size: 14px;
-			line-height: 30px;
 
 			color: #6D6B6B;
+			padding-top: 30px;
   		}
   		.b-lengkap{
 			width: 214px;
@@ -129,6 +120,7 @@
 			text-align: center;
 
 			color: #FFFFFF;
+			border: 0;
   		}
   		.img-video{
   			padding-top: 80px;
@@ -147,7 +139,7 @@
 
 			font-family: 'Poppins';
 			font-style: normal;
-			font-weight: 600;
+			font-weight: 700;
 			font-size: 24px;
 			line-height: 36px;
 			/* identical to box height */
@@ -168,17 +160,17 @@
   		.p-dominasi{
   			font-family: 'Poppins';
 			font-style: normal;
-			font-weight: 700;
+			font-weight: 800;
 			font-size: 50px;
-			line-height: 75px;
+			line-height: 70px;
 
 			color: #333333;
   		}
   		.t-psw{
   			font-family: 'Poppins';
 			font-style: normal;
-			font-weight: 700;
-			font-size: 18px;
+			font-weight: 800;
+			font-size: 20px;
 
 			color: #333333;
 			padding: 5px;
@@ -197,7 +189,7 @@
 		   -webkit-appearance: none;
 		}
 		input[type=range]::-webkit-slider-runnable-track {
-		   width: 300px;
+		   width: 100%;
 		   height: 5px;
 		   background: #ddd;
 		   border: none;
@@ -222,7 +214,7 @@
 		   /* fix for FF unable to apply focus style bug  */
 		   border: 1px solid white;
 		   /*required for proper track sizing in FF*/
-		   width: 300px;
+		   width: 100%;
 		}
 		 input[type=range]::-moz-range-track {
 		   width: 300px;
@@ -288,7 +280,7 @@
 		.text-target{
 			font-family: 'Poppins';
 			font-style: normal;
-			font-weight: 600;
+			font-weight: 550;
 			font-size: 13px;
 
 
@@ -313,10 +305,10 @@
 			font-style: normal;
 			font-weight: 600;
 			font-size: 75px;
-			line-height: 112px;
+			line-height: 70px;
 			/* identical to box height */
 
-
+			margin-bottom: 0;
 			color: #219F94;
 		}
 		.rupiah{
@@ -324,16 +316,20 @@
 			font-style: normal;
 			font-weight: 600;
 			font-size: 35px;
-			line-height: 52px;
+			line-height: 0;
 			/* identical to box height */
 
 
 			color: #219F94;
 		}
+		.b-duaplus{
+			font-family: 'Poppins';
+			font-weight: 500;
+		}
 		.wakaf_sukarela{
 			font-family: 'Poppins';
 			font-style: normal;
-			font-weight: 700;
+			font-weight: 800;
 			font-size: 35px;
 
 			color: #FFFFFF;
@@ -384,7 +380,7 @@
 		.f-title{
 			font-family: 'Poppins';
 			font-style: normal;
-			font-weight: 600;
+			font-weight: 700;
 			font-size: 24px;
 			line-height: 36px;
 			color: #333333;
@@ -414,7 +410,7 @@
 	<div class="bg1">
 		<div class="container">
 			<!-- HEADER -->
-			<nav class="navbar navbar-light">
+			<nav class="navbar navbar-light" style="padding-top: 20px;">
 				<div class="container-fluid">
 					<a class="navbar-brand">
 						<img src="{{ asset('img/logo1.png') }}" class="image-fluid">
@@ -424,7 +420,9 @@
 						<a class="a-header p-3">Kategori</a>
 						<a class="a-header p-3">Program</a>
 						<a class="a-header p-3">FAQ</a>
-						<button class="b-header p-3">Hubungi Kami</button>
+						<div class="p-2">
+							<button class="btn btn-success" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 15px; color: #FFFFFF; background: #219F94; border-radius: 20px; padding: 10px; padding-right: 15px; padding-left: 15px; border: 0;">Hubungi Kami</button>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -432,8 +430,8 @@
 			<div class="row" align="center">
 				<div class="container" style="padding-top: 155px;">
 					<div class="row">
-						<h2 class="m-text">Bangun peradaban dengan Wakaf Produktif</h2>
-						<h2 class="m-text">Untuk kemaslahatan dan kesejahteraan umat</h2>
+						<h1 class="m-text">Bangun peradaban dengan Wakaf Produktif</h1>
+						<h1 class="m-text">Untuk kemaslahatan dan kesejahteraan umat</h1>
 						<div class="col-2"></div>
 						<div class="col-8">
 							<p class="m-text-2">Berawakaf dengan menggunakan Wakafnyok, platform yang aman, transparan, dan tepercaya. dan memiliki 10+ tahun pengalaman</p>
@@ -550,103 +548,101 @@
 						<p class="p-dominasi">Program Semua Wakaf</p>
 					</div>
 					<div class="col-8" align="right">
-						<div class="row">
-							<div class="col-11" style="padding-right: 0;">
-								<button style="border: 0; background-color: transparent;"><img src="{{ asset('img/arrow_left.png') }}"></button>
-							</div>
-							<div class="col-1">
-								<button style="border: 0; background-color: transparent;"><img src="{{ asset('img/arrow_right.png') }}"></button>
+						<div class="container">
+							<div class="row">
+								<div class="col-11" style="padding-right: 0;">
+									<button style="border: 0; background-color: transparent;"><img src="{{ asset('img/arrow_left.png') }}"></button>
+								</div>
+								<div class="col-1">
+									<button style="border: 0; background-color: transparent;"><img src="{{ asset('img/arrow_right.png') }}"></button>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-4" style="padding-top: 90px;">
-						<div class="container">
-							<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 420px;">
-								<div class="form-group" style="padding: 5px;">
-									<img src="{{ asset('img/wakaf.png') }}" class="img-fluid" style="padding: 5px;">
-									<p class="t-psw">Wakaf peduli ulama di pedalaman</p>
-									<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaia</p>
-									<input type="range" name="" min="0" value="50" max="100" step="1" class="form-control" style="padding: 5px">
-									<div class="row" align="center">
-										<div class="col-8" align="left">
-											<p class="text-target" style="padding-left: 5px;">Target : Rp500.000.000</p>
-										</div>
-										<div class="col-4" align="right">
-											<p class="text-target" style="padding-right: 5px;">75%</p>
-										</div>
+						<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 520px;">
+							<div class="form-group" style="padding: 5px;">
+								<img src="{{ asset('img/wakaf.png') }}" class="img-fluid" style="padding: 5px; min-height: 250px;">
+								<p class="t-psw">Wakaf peduli ulama di pedalaman</p>
+								<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaia</p>
+								<input type="range" name="" min="0" value="75" max="100" step="1" class="form-control" style="padding: 5px">
+								<div class="row" align="center">
+									<div class="col-8" align="left">
+										<p class="text-target" style="padding-left: 5px;">Target : Rp500.000.000</p>
 									</div>
-									<a href="{{ route('Wakaf.index') }}">
-										<div align="center" style="padding-bottom: 20px;">
-											<button class="btn-wakaf">Wakaf Sekarang</button>
-										</div>
-									</a>
-								</div>						
-							</div>
+									<div class="col-4" align="right">
+										<p class="text-target" style="padding-right: 5px;">75%</p>
+									</div>
+								</div>
+								<a href="{{ route('Wakaf.index') }}">
+									<div align="center" style="padding-bottom: 20px;">
+										<button class="btn-wakaf">Wakaf Sekarang</button>
+									</div>
+								</a>
+							</div>						
 						</div>
 					</div>
 
 					<div class="col-4" style="padding-top: 90px;">
-						<div class="container">
-							<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 420px;">
-								<div class="form-group" style="padding: 5px;">
-									<img src="{{ asset('img/wakaf_mesjid.png') }}" class="img-fluid" style="padding: 5px;">
-									<p class="t-psw" style="padding-bottom: 33px;">Wakaf renovasi Masjid</p>
-									<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaian</p>
-									<input type="range" name="" min="0" value="50" max="100" step="1" class="form-control" style="padding: 5px">
-									<div class="row" align="center">
-										<div class="col-8" align="left">
-											<p class="text-target" style="padding-left: 5px;">Target : Rp500.000.000</p>
-										</div>
-										<div class="col-4" align="right">
-											<p class="text-target" style="padding-right: 5px;">75%</p>
-										</div>
+						<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 520px;">
+							<div class="form-group" style="padding: 5px;">
+								<img src="{{ asset('img/wakaf_mesjid.png') }}" class="img-fluid" style="padding: 5px; min-height: 250px;">
+								<p class="t-psw">Wakaf renovasi Masjid</p>
+								<p class="text-psw" style="padding-top: 30px;">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaian</p>
+								<input type="range" name="" min="0" value="75" max="100" step="1" class="form-control" style="padding: 5px">
+								<div class="row" align="center">
+									<div class="col-8" align="left">
+										<p class="text-target" style="padding-left: 5px;">Target : Rp500.000.000</p>
 									</div>
-									<a href="{{ route('Wakaf.masjid') }}">
-										<div align="center" style="padding-bottom: 20px;">
-											<button class="btn-wakaf">Wakaf Sekarang</button>
-										</div>
-									</a>
-								</div>						
-							</div>
+									<div class="col-4" align="right">
+										<p class="text-target" style="padding-right: 5px;">75%</p>
+									</div>
+								</div>
+								<a href="{{ route('Wakaf.masjid') }}">
+									<div align="center" style="padding-bottom: 20px;">
+										<button class="btn-wakaf">Wakaf Sekarang</button>
+									</div>
+								</a>
+							</div>						
 						</div>
 					</div>
 
 					<div class="col-4" style="padding-top: 90px;">
-						<div class="container">
-							<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 420px;">
-								<div class="form-group" style="padding: 5px;">
-									<img src="{{ asset('img/wakaf_nasional.png') }}" class="img-fluid" style="padding: 5px;">
-									<p class="t-psw">Wakaf peduli ulama di pedalaman</p>
-									<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaia</p>
-									<input type="range" name="" min="0" value="50" max="100" step="1" class="form-control" style="padding: 5px">
-									<div class="row" align="center">
-										<div class="col-8" align="left">
-											<p class="text-target" style="padding-left: 5px;">Target : Rp500.000.000</p>
-										</div>
-										<div class="col-4" align="right">
-											<p class="text-target" style="padding-right: 5px;">75%</p>
-										</div>
+						<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 520px;">
+							<div class="form-group" style="padding: 5px;">
+								<img src="{{ asset('img/wakaf_nasional.png') }}" class="img-fluid" style="padding: 5px; min-height: 250px;">
+								<p class="t-psw">Gerakan Nasional Wakaf Uang</p>
+								<p class="text-psw" style="padding-top: 30px;">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaia</p>
+								<input type="range" name="" min="0" value="75" max="100" step="1" class="form-control" style="padding: 5px">
+								<div class="row" align="center">
+									<div class="col-8" align="left">
+										<p class="text-target" style="padding-left: 5px;">Target : Rp500.000.000</p>
 									</div>
-									<a href="{{ route('Wakaf.nasional') }}">
-										<div align="center" style="padding-bottom: 20px;">
-											<button class="btn-wakaf">Wakaf Sekarang</button>
-										</div>
-									</a>
-								</div>						
-							</div>
+									<div class="col-4" align="right">
+										<p class="text-target" style="padding-right: 5px;">75%</p>
+									</div>
+								</div>
+								<a href="{{ route('Wakaf.nasional') }}">
+									<div align="center" style="padding-bottom: 20px;">
+										<button class="btn-wakaf">Wakaf Sekarang</button>
+									</div>
+								</a>
+							</div>	
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container" style="padding-top: 75px; padding-bottom: 75px;">
+		<div class="container" style="padding-top: 100px; padding-bottom: 100px;">
 			<div class="row">
 				<div class="col-4" align="center">
 					<p class="duaplus">20+</p>
+					<p class="b-duaplus">Proyek</p>
 				</div>
 				<div class="col-4" align="center" style="border-width: 0px 1px 0px 1px; border-style: solid; border-color: #BCBCBC;">
 					<p class="duaplus">2.390+</p>
+					<p class="b-duaplus">Wakif</p>
 				</div>
 				<div class="col-4" align="left">
 					<div class="container">
@@ -658,6 +654,9 @@
 								<p class="duaplus">78M+</p>
 							</div>
 						</div>
+					</div>
+					<div align="center">
+						<p class="b-duaplus">Wakaf</p>
 					</div>
 				</div>
 			</div>
@@ -676,11 +675,12 @@
 									Bergabung
 								</button>
 							</div>
-							<div class="col-5" align="center">
+							<div class="col-5" align="left">
 								<button class="b-lihat">
 									Lihat Aksi Kami
 								</button>
 							</div>
+							<div class="col-4"></div>
 						</div>
 					</div>
 					<div class="col-6">
@@ -707,8 +707,8 @@
 						<img src="{{ asset('img/logo1.png') }}" class="image-fluid">
 					</div>
 					<p class="f-bantu">Bantu orang lain dengan menggunakan Berbagi, sebuah platform yang aman, transparan, dan terpercaya.</p>
-					<p class="f-bantu">bantuan@wakafnyok.org.id</p>
-					<p class="f-bantu">021-82216602</p>
+					<p class="f-bantu" style="font-weight: 600;">bantuan@wakafnyok.org.id</p>
+					<p class="f-bantu" style="font-weight: 600;">021-82216602</p>
 				</div>
 				<div class="col-7">
 					<div class="row">
