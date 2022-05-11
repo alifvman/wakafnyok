@@ -7,6 +7,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/logo.png') }}" />
 	    <!-- Bootstrap CSS -->
 	    <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<!-- <script src="{{asset('assets/js/jquery.min.js')}}"></script> -->
 	    <link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css?family=Poppins:900,800,700,600,500,400,300,200,100&display=swap" rel="stylesheet">
 		<style type="text/css">
@@ -15,8 +16,6 @@
 				font-family: 'Poppins';
 				font-style: normal;
 			}
-
-
 
 		</style>
 	</head>

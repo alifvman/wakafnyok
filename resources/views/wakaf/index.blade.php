@@ -183,6 +183,30 @@
 	  			padding-top: 0px;
 	  			margin-top: 20px;
 	  		}
+	  		.input-radio{
+				display: inline-block;
+				margin-right: 10px;
+	  			border: 1px solid #BCBCBC;
+				border-radius: 25px;
+				width: 100%;
+			}
+			input[type=radio] {
+			    display: none;
+			}
+				input[type=radio] + label {
+				padding: 20px;
+				border-radius: 40px;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				width: 100%;
+
+			}
+				input[type=radio] + label:hover {
+				border: 1px solid red;
+			}
+				input[type=radio]:checked + label {
+				border: 1px solid red;
+			}
 		</style>
 	</head>
 	<body>
@@ -230,33 +254,39 @@
 							<p class="t-pilih">Atau pilih Nominal Wakaf</p>
 						</div>
 						<div class="col-4" align="center">
-							<div class="container b-nominal">
-								<p class="n-nominal">10.000</p>
+							<div class="input-radio">
+								<input type="radio" id="10000" name="nominal" value="10000"> 
+								<label for="10000" class="n-nominal">10.000</label>
 							</div>
 						</div>
 						<div class="col-4" align="center">
-							<div class="container b-nominal">
-								<p class="n-nominal">20.000</p>
+							<div class="input-radio">
+								<input type="radio" id="20000" name="nominal" value="20000"> 
+								<label for="20000" class="n-nominal">20.000</label>
 							</div>
 						</div>
 						<div class="col-4" align="center">
-							<div class="container b-nominal">
-								<p class="n-nominal">50.000</p>
+							<div class="input-radio">
+								<input type="radio" id="50000" name="nominal" value="50000"> 
+								<label for="50000" class="n-nominal">50.000</label>
 							</div>
 						</div>
 						<div class="col-4" align="center" style="padding-top: 20px;">
-							<div class="container b-nominal">
-								<p class="n-nominal">100.000</p>
+							<div class="input-radio">
+								<input type="radio" id="100000" name="nominal" value="100000"> 
+								<label for="100000" class="n-nominal">100.000</label>
 							</div>
 						</div>
 						<div class="col-4" align="center" style="padding-top: 20px;">
-							<div class="container b-nominal">
-								<p class="n-nominal">200.000</p>
+							<div class="input-radio">
+								<input type="radio" id="200000" name="nominal" value="200000"> 
+								<label for="200000" class="n-nominal">200.000</label>
 							</div>
 						</div>
 						<div class="col-4" align="center" style="padding-top: 20px;">
-							<div class="container b-nominal">
-								<p class="n-nominal">500.000</p>
+							<div class="input-radio">
+								<input type="radio" id="500000" name="nominal" value="500000"> 
+								<label for="500000" class="n-nominal">500.000</label>
 							</div>
 						</div>
 						<div class="col-12" align="center" style="padding-top: 50px;">
@@ -363,20 +393,19 @@
 							<p class="t-pilih">Profil Wakif</p>
 						</div>
 						<div class="col-12 form-group" style="padding-top: 25px;">
-							<input type="text" name="nama" placeholder="Nama Lengkap" class="form-control" style="font-size: 35px!important; ">
+							<input type="text" id="nama" name="nama" placeholder="Nama Lengkap" class="form-control" style="font-size: 35px!important; ">
 						</div>
 						<div class="col-12 form-group" style="padding-top: 25px;">
-							<input type="email" name="email" placeholder="Alamat Email" class="form-control" style="font-size: 35px!important; ">
+							<input type="email" id="email" name="email" placeholder="Alamat Email" class="form-control" style="font-size: 35px!important; ">
 						</div>
 						<div class="col-12 form-group" style="padding-top: 25px;" align="center">
-							<input type="number" name="no_hp" placeholder="Nomor Telpon" class="form-control" style="font-size: 35px!important; ">
-							<p class="t-minimumm">Mohon diisi</p>
+							<input type="number" id="no_hp" name="no_hp" placeholder="Nomor Telpon" class="form-control" style="font-size: 35px!important; ">
+							<p class="t-minimumm" id="text">Mohon diisi</p>
 						</div>
-						<div class="col-1"></div>
-						<div class="col-11">
-							<div class="form-check">
-								<input name="anonim" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-								<label class="form-check-label" for="flexCheckDefault">
+						<div class="col-11" style="padding-left: 50px;">
+							<div class="form-check" id="checks">
+    							<input name="checkin" type="checkbox" class="oneChecked badCheckbox" style="width: 25px; height: 25px; border-radius: 10%!important;" />
+								<label class="form-check-label" for="checkin" style="font-size: 25px; padding-left: 10px;">
 									Tampilkan sebagai wakif anonim
 								</label>
 							</div>
@@ -444,6 +473,8 @@
 				</div>
 			</div>			
 		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 		<script type="text/javascript">
 			var rupiah = document.getElementById("rupiah");
 			rupiah.addEventListener("keyup", function(e) {
@@ -469,6 +500,29 @@
 			  	rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
 			  	return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
 			}
+			$('#checks').on('change', 'input[name="checkin"]', function (){
+
+			    if( $(this).is(':checked') ){
+			        $('#checks .oneChecked:checked').prop('checked', false);
+			        $(this).prop('checked', true);
+			    } else {
+			        $('#checks .oneChecked:checked').prop('checked', false);
+			        $(this).prop('checked', false);
+			    }
+
+			    if( $('#checks .badCheckbox:checked').is(':checked') ){
+			        $('#nama').hide();
+			        $('#email').hide();
+			        $('#no_hp').hide();
+			        $('#text').hide();
+			    } else {
+			        $('#nama').show();
+			        $('#email').show();
+			        $('#no_hp').show();
+			        $('#text').show();
+			    }
+			    
+			});
 		</script>
 	</body>
 </html>
