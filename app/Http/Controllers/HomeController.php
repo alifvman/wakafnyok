@@ -14,4 +14,15 @@ class HomeController extends Controller
 
     }
 
+    public function tentang_kami()
+    {
+
+        $page = 'Tentang Kami';
+        
+        return view('tentang_kami')->with([
+            'page'  =>  $page,
+        ]);
+
+    }
+
 }

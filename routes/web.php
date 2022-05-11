@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::group(['as' => 'Home.'], function () {
     Route::get('/', 'HomeController@index')->name('index');
+    Route::get('TentangKami', 'HomeController@tentang_kami')->name('tentang_kami');
 });
 
 Route::group(['prefix' => 'Wakaf', 'as' => 'Wakaf.'], function () {

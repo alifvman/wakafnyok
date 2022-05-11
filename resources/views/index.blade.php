@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Badan Wakaf Indonesia</title>
+	<title>Badan Wakaf Indonesia | {{$page->title ?? 'Home'}}</title>
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/logo.png') }}" />
     <!-- Bootstrap CSS -->
     <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -330,16 +330,16 @@
 			font-family: 'Poppins';
 			font-style: normal;
 			font-weight: 800;
-			font-size: 35px;
+			font-size: 40px;
 
 			color: #FFFFFF;
-			padding-top: 20px;
+			padding-top: 40px;
 		}
 		.wakaf_koneksi{
 			font-family: 'Poppins';
 			font-style: normal;
 			font-weight: 400;
-			font-size: 14px;
+			font-size: 16px;
 
 			color: #FFFFFF;
 		}
@@ -389,7 +389,7 @@
 			font-family: 'Poppins';
 			font-style: normal;
 			font-weight: 400;
-			font-size: 18px;
+			font-size: 22px;
 
 			color: #555555;
 			padding-top: 30px;
@@ -398,7 +398,7 @@
 			font-family: 'Poppins';
 			font-style: normal;
 			font-weight: 400;
-			font-size: 18px;
+			font-size: 22px;
 
 			color: #555555;
 			padding-top: 20px;
@@ -416,7 +416,7 @@
 						<img src="{{ asset('img/logo1.png') }}" class="image-fluid">
 					</a>
 					<div class="d-flex">
-						<a class="a-header p-3">Tentang Kami</a>
+						<a class="a-header p-3" href="{{ route('Home.tentang_kami') }}">Tentang Kami</a>
 						<a class="a-header p-3">Kategori</a>
 						<a class="a-header p-3">Program</a>
 						<a class="a-header p-3">FAQ</a>
@@ -563,7 +563,7 @@
 					<div class="col-4" style="padding-top: 90px;">
 						<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 520px;">
 							<div class="form-group" style="padding: 5px;">
-								<img src="{{ asset('img/wakaf.png') }}" class="img-fluid" style="padding: 5px; min-height: 250px;">
+								<img src="{{ asset('img/wakaf.png') }}" class="img-fluid" style="padding: 5px; min-height: 262px;">
 								<p class="t-psw">Wakaf peduli ulama di pedalaman</p>
 								<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaia</p>
 								<input type="range" name="" min="0" value="75" max="100" step="1" class="form-control" style="padding: 5px">
@@ -587,9 +587,9 @@
 					<div class="col-4" style="padding-top: 90px;">
 						<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 520px;">
 							<div class="form-group" style="padding: 5px;">
-								<img src="{{ asset('img/wakaf_mesjid.png') }}" class="img-fluid" style="padding: 5px; min-height: 250px;">
+								<img src="{{ asset('img/wakaf_mesjid.png') }}" class="img-fluid" style="padding: 5px; min-height: 262px;">
 								<p class="t-psw">Wakaf renovasi Masjid</p>
-								<p class="text-psw" style="padding-top: 30px;">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaian</p>
+								<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaian</p>
 								<input type="range" name="" min="0" value="75" max="100" step="1" class="form-control" style="padding: 5px">
 								<div class="row" align="center">
 									<div class="col-8" align="left">
@@ -611,9 +611,9 @@
 					<div class="col-4" style="padding-top: 90px;">
 						<div class="card" style="background: #FFFFFF; border-radius: 20px; min-height: 520px;">
 							<div class="form-group" style="padding: 5px;">
-								<img src="{{ asset('img/wakaf_nasional.png') }}" class="img-fluid" style="padding: 5px; min-height: 250px;">
+								<img src="{{ asset('img/wakaf_nasional.png') }}" class="img-fluid" style="padding: 5px; min-height: 262px;">
 								<p class="t-psw">Gerakan Nasional Wakaf Uang</p>
-								<p class="text-psw" style="padding-top: 30px;">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaia</p>
+								<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaia</p>
 								<input type="range" name="" min="0" value="75" max="100" step="1" class="form-control" style="padding: 5px">
 								<div class="row" align="center">
 									<div class="col-8" align="left">
@@ -666,10 +666,10 @@
 				<div class="row">
 					<div class="col-6">
 						<p class="wakaf_sukarela">Wakaf lebih banyak dengan bergabung sebagai Sukarelawan!</p>
-						<div class="col-9" style="padding-top: 30px">
+						<div class="col-9">
 							<p class="wakaf_koneksi">Tempat berbagi informasi, aktivitas , menjalin koneksi, dan dapatkan teman baru</p>
 						</div>
-						<div class="row" style="padding-top: 50px;">
+						<div class="row" style="padding-top: 30px;">
 							<div class="col-3" align="left">
 								<button class="b-bergabung">
 									Bergabung

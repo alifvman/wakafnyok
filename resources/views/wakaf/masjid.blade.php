@@ -177,6 +177,32 @@
 
 				color: #FFFFFF;
 	  		}
+			.f-title{
+				font-family: 'Poppins';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 36px;
+				color: #333333;
+			}
+			.f-bantu{
+				font-family: 'Poppins';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 18px;
+
+				color: #555555;
+				padding-top: 30px;
+			}
+			.f-text{
+				font-family: 'Poppins';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 18px;
+
+				color: #555555;
+				padding-top: 20px;
+			}
 		</style>
 	</head>
 	<body>
