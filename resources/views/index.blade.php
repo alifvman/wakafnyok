@@ -575,7 +575,7 @@
 										<p class="text-target" style="padding-right: 5px;">75%</p>
 									</div>
 								</div>
-								<a href="{{ route('Wakaf.index') }}">
+								<a href="{{ route('Wakaf.index',['title' => 'Wakaf peduli ulama di pedalaman', 'img' => 'wakaf', 'text' => 'Wakaf Peduli Ulama di Pedalaman', 'alamat' => 'DKI Jakarta']) }}">
 									<div align="center" style="padding-bottom: 20px;">
 										<button class="btn-wakaf">Wakaf Sekarang</button>
 									</div>
@@ -599,7 +599,7 @@
 										<p class="text-target" style="padding-right: 5px;">75%</p>
 									</div>
 								</div>
-								<a href="{{ route('Wakaf.masjid') }}">
+								<a href="{{ route('Wakaf.index',['title' => 'Wakaf renovasi Masjid', 'img' => 'wakaf_mesjid', 'text' => 'Wakaf Renovasi Pembangunan Masjid', 'alamat' => 'Klender, Jakarta Timur']) }}">
 									<div align="center" style="padding-bottom: 20px;">
 										<button class="btn-wakaf">Wakaf Sekarang</button>
 									</div>
@@ -623,7 +623,7 @@
 										<p class="text-target" style="padding-right: 5px;">75%</p>
 									</div>
 								</div>
-								<a href="{{ route('Wakaf.nasional') }}">
+								<a href="{{ route('Wakaf.index',['title' => 'Gerakan Nasional Wakaf Uang', 'img' => 'wakaf_nasional', 'text' => 'Gerakan Nasional Wakaf Uang', 'alamat' => 'DKI Jakarta']) }}">
 									<div align="center" style="padding-bottom: 20px;">
 										<button class="btn-wakaf">Wakaf Sekarang</button>
 									</div>

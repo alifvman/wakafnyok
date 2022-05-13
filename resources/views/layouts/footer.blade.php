@@ -20,7 +20,7 @@
 		padding-top: 20px;
 	}
 </style>
-<div style="padding-top: 75px; background: #F5F5F5;">
+<div style="padding-top: 75px; padding-bottom: 75px; background: #F5F5F5;">
 	<div class="container">
 		<div class="row">
 			<div class="col-5" align="left">
@@ -28,8 +28,8 @@
 					<img src="{{ asset('img/logo1.png') }}" class="image-fluid">
 				</div>
 				<p class="f-bantu">Bantu orang lain dengan menggunakan Berbagi, sebuah platform yang aman, transparan, dan terpercaya.</p>
-				<p class="f-bantu">bantuan@wakafnyok.org.id</p>
-				<p class="f-bantu">021-82216602</p>
+				<p class="f-bantu" style="font-weight: 500;">bantuan@wakafnyok.org.id</p>
+				<p class="f-bantu" style="font-weight: 500;">021-82216602</p>
 			</div>
 			<div class="col-7">
 				<div class="row">

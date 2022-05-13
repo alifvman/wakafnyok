@@ -28,3 +28,15 @@ Route::group(['prefix' => 'Wakaf', 'as' => 'Wakaf.'], function () {
     Route::get('/Nasional', 'WakafController@nasional')->name('nasional');
     Route::post('Payment', 'WakafController@payment')->name('payment');
 });
+
+Route::get('send-mail', function () {
+   
+    $details = [
+        'title' => 'Mail from siakad.com',
+        'body' => 'This is for testing email using smtp'
+    ];
+   
+    \Mail::to('vman.alif217@gmail.com')->send(new \App\Mail\MyTestMail($details));
+   
+    dd("Email is Sent.");
+})->name('email');

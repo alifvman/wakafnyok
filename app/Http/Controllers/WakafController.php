@@ -7,10 +7,17 @@ use Illuminate\Http\Request;
 class WakafController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
 
-        return view('wakaf.index');
+        $page = $request->title;
+
+        return view('wakaf.index')->with([
+            'img'   => $request->img,
+            'text'  => $request->text,
+            'alamat'=> $request->alamat,
+            'page'  =>  $page,
+        ]);
 
     }
 
@@ -30,7 +37,7 @@ class WakafController extends Controller
 
     public function payment(Request $request)
     {
-
+return $request->all();
         return view('wakaf.payment')->with([
             'nominal'   => $request->nominal,
             'metode'    => $request->metode,
