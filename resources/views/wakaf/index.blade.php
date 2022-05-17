@@ -189,7 +189,7 @@
 					</div>
 					<div class="col-12 form-group" align="center">
 						<p class="t-nominal">Masukkan Nominal Wakaf</p>
-						<input type="text" class="form-control" name="tnominal" id="rupiah" style="border: 1px solid #BCBCBC; box-sizing: border-box; border-radius: 15px; height: 60px;" placeholder="Rp">
+						<input type="text" class="form-control" name="nominal" id="rupiah" style="border: 1px solid #BCBCBC; box-sizing: border-box; border-radius: 15px; height: 60px;" placeholder="Rp">
 						<p class="t-minimumm">Mohon isi Rp 10.000 atau lebih</p>
 					</div>
 					<div class="col-12" align="center" style="padding-top: 25px;">
@@ -346,8 +346,8 @@
 					</div>
 					<div class="col-11" style="padding-left: 50px;">
 						<div class="form-check" id="checks">
-							<input name="checkin" type="checkbox" class="oneChecked badCheckbox" style="width: 25px; height: 25px; bor" />
-							<label class="form-check-label" for="checkin" style="font-size: 25px; padding-left: 10px;">
+							<input name="anonim" type="checkbox" class="oneChecked badCheckbox" style="width: 25px; height: 25px; bor" />
+							<label class="form-check-label" for="anonim" style="font-size: 25px; padding-left: 10px;">
 								Tampilkan sebagai wakif anonim
 							</label>
 						</div>
@@ -387,58 +387,119 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<script type="text/javascript">
+
+		var realtotal = document.getElementById("realtotal");
 		var rupiah = document.getElementById("rupiah");
-		rupiah.addEventListener("keyup", function(e) {
+			$( document ).ready(function() {
+			    console.log( "ready!" );
+			    $("input[name='nominal']").on("keyup",function (e) {
+				    	
+			    	var rupiahvalue = formatRupiah(this.value ?? 0, "Rp. ");
+			    	if (rupiahvalue == "Rp. 01") {
+						rupiah.value = rupiahvalue.replace("Rp. 01", "Rp. 1");
+			    	}else if (rupiahvalue == "Rp. 02") {
+						rupiah.value = rupiahvalue.replace("Rp. 02", "Rp. 2");
+			    	}else if (rupiahvalue == "Rp. 03") {
+						rupiah.value = rupiahvalue.replace("Rp. 03", "Rp. 3");
+			    	}else if (rupiahvalue == "Rp. 04") {
+						rupiah.value = rupiahvalue.replace("Rp. 04", "Rp. 4");
+			    	}else if (rupiahvalue == "Rp. 05") {
+						rupiah.value = rupiahvalue.replace("Rp. 05", "Rp. 5");
+			    	}else if (rupiahvalue == "Rp. 06") {
+						rupiah.value = rupiahvalue.replace("Rp. 06", "Rp. 6");
+			    	}else if (rupiahvalue == "Rp. 07") {
+						rupiah.value = rupiahvalue.replace("Rp. 07", "Rp. 7");
+			    	}else if (rupiahvalue == "Rp. 08") {
+						rupiah.value = rupiahvalue.replace("Rp. 08", "Rp. 8");
+			    	}else if (rupiahvalue == "Rp. 09") {
+						rupiah.value = rupiahvalue.replace("Rp. 09", "Rp. 9");
+			    	}else{
+			    		rupiah.value = rupiahvalue;
+			    	}
+
+					// var radio = $("#results").text($("input[name='nominal']:checked").val());
+					var vrupiah = rupiah.value;
+					var rrupiah = vrupiah.toString().replace("Rp. ", "");
+					var nrupiah = rrupiah.toString().replace("Rp. 0", "");
+					var crupiah = nrupiah.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+					var hrupiah = crupiah.toString().replace(".", "");
+					var radio = $("input[name='nominal']:checked").val();
+
+					if (radio) {
+
+						var total = parseInt(radio ?? 0) + parseInt(hrupiah ?? 0);
+						var ifrupiah = total ?? 0;
+				
+						var	reverse = ifrupiah.toString().split('').reverse().join(''),
+							ribuan 	= reverse.match(/\d{1,3}/g);
+							ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
+
+						$("#alltotal").text(ribuan);
+						realtotal.value = ifrupiah;
+
+					}else{
+
+						var ifrupiah = hrupiah ?? 0;
+						var	reverse = ifrupiah.toString().split('').reverse().join(''),
+							ribuan 	= reverse.match(/\d{1,3}/g);
+							ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
+
+						$("#alltotal").text(ribuan);
+						realtotal.value = ifrupiah;
+
+
+					}
+
+			    });
+
+			});
+
+		// rupiah.addEventListener("change", function(e) {
 			// tambahkan 'Rp.' pada saat form di ketik
 			// gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-			rupiah.value = formatRupiah(this.value, "Rp. ");
-
-			// var radio = $("#results").text($("input[name='nominal']:checked").val());
-			var vrupiah = rupiah.value;
-			var rrupiah = vrupiah.toString().replace("Rp. ", "");
-			var crupiah = rrupiah.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
-			var hrupiah = crupiah.toString().replace(".", "");
-			var radio = $("input[name='nominal']:checked").val();
-
-			if (radio) {
-
-				var total = parseInt(radio ?? 0) + parseInt(hrupiah ?? 0);
-		
-				var	reverse = total.toString().split('').reverse().join(''),
-					ribuan 	= reverse.match(/\d{1,3}/g);
-					ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
-
-				$("#alltotal").text(ribuan);
-				$("#realtotal").text(ribuan);
-
-			}else{
-				var ifrupiah = hrupiah ?? 0;
-				var	reverse = ifrupiah.toString().split('').reverse().join(''),
-					ribuan 	= reverse.match(/\d{1,3}/g);
-					ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
-
-				$("#alltotal").text(ribuan);
-				$("#realtotal").text(ribuan);
-
-			}
-		});
+			
+		// });
 
 		/* Fungsi formatRupiah */
 		function formatRupiah(angka, prefix) {
-			var number_string = angka.replace(/[^,\d]/g, "").toString(),
-			    split = number_string.split(","),
-			    sisa = split[0].length % 3,
-			    rupiah = split[0].substr(0, sisa),
-			    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+			if (angka != 'Rp. ') {
 
-			// tambahkan titik jika yang di input sudah menjadi angka ribuan
-			if (ribuan) {
-			    separator = sisa ? "." : "";
-			    rupiah += separator + ribuan.join(".");
-		  	}
+				var number_string = angka.replace(/[^,\d]/g, "").toString(),
+				    split = number_string.split(","),
+				    sisa = split[0].length % 3,
+				    rupiah = split[0].substr(0, sisa),
+				    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
-		  	rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
-		  	return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
+				// tambahkan titik jika yang di input sudah menjadi angka ribuan
+				if (ribuan) {
+				    separator = sisa ? "." : "";
+				    rupiah += separator + ribuan.join(".");
+			  	}
+
+			  	rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
+			  	return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
+
+			}else{
+
+				angka = 'Rp. 0';
+
+				var number_string = angka.replace(/[^,\d]/g, "").toString(),
+				    split = number_string.split(","),
+				    sisa = split[0].length % 3,
+				    rupiah = split[0].substr(0, sisa),
+				    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+				// tambahkan titik jika yang di input sudah menjadi angka ribuan
+				if (ribuan) {
+				    separator = sisa ? "." : "";
+				    rupiah += separator + ribuan.join(".");
+			  	}
+
+			  	rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
+			  	return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
+			
+			}
+
 		}
 
 		$("input:radio").on("click",function (e) {
@@ -448,28 +509,31 @@
 				// var radio = $("#results").text($("input[name='nominal']:checked").val());
 				var vrupiah = rupiah.value;
 				var rrupiah = vrupiah.toString().replace("Rp. ", "");
-				var crupiah = rrupiah.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+				var nrupiah = rrupiah.toString().replace("Rp. 0", "");
+				var crupiah = nrupiah.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 				var hrupiah = crupiah.toString().replace(".", "");
 				var radio = $("input[name='nominal']:checked").val();
 
 				if (hrupiah) {
 					var total = parseInt(radio ?? 0) + parseInt(hrupiah ?? 0);
+					var ifrupiah = total ?? 0;
 			
 					var	reverse = total.toString().split('').reverse().join(''),
 						ribuan 	= reverse.match(/\d{1,3}/g);
 						ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
 
 					$("#alltotal").text(ribuan);
-					$("#realtotal").text(ribuan);
+					realtotal.value = ifrupiah;
 
 				}else{
 
+					var ifrupiah = radio ?? 0;
 					var	reverse = radio.toString().split('').reverse().join(''),
 						ribuan 	= reverse.match(/\d{1,3}/g);
 						ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
 
 					$("#alltotal").text(ribuan);
-					$("#realtotal").text(ribuan);
+					realtotal.value = ifrupiah;
 
 				}
 
@@ -479,35 +543,38 @@
 				// var radio = $("#results").text($("input[name='nominal']:checked").val());
 				var vrupiah = rupiah.value;
 				var rrupiah = vrupiah.toString().replace("Rp. ", "");
-				var crupiah = rrupiah.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+				var nrupiah = rrupiah.toString().replace("Rp. 0", "");
+				var crupiah = nrupiah.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 				var hrupiah = crupiah.toString().replace(".", "");
 				var radio = $("input[name='nominal']:checked").val();
 
 				if (hrupiah) {
 					var total = parseInt(radio ?? 0) + parseInt(hrupiah ?? 0);
+					var ifrupiah = total ?? 0;
 			
 					var	reverse = total.toString().split('').reverse().join(''),
 						ribuan 	= reverse.match(/\d{1,3}/g);
 						ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
 
 					$("#alltotal").text(ribuan);
-					$("#realtotal").text(ribuan);
+					realtotal.value = ifrupiah;
 
 				}else{
 
+					var ifrupiah = radio ?? 0;
 					var	reverse = radio.toString().split('').reverse().join(''),
 						ribuan 	= reverse.match(/\d{1,3}/g);
 						ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
 
 					$("#alltotal").text(ribuan);
-					$("#realtotal").text(ribuan);
+					realtotal.value = ifrupiah;
 
 				}
 		    }
 
 		});
 
-		$('#checks').on('change', 'input[name="checkin"]', function (){
+		$('#checks').on('change', 'input[name="anonim"]', function (){
 
 		    if( $(this).is(':checked') ){
 		        $('#checks .oneChecked:checked').prop('checked', false);
@@ -530,39 +597,6 @@
 		    }
 		    
 		});
-
-		// $( document ).ready(function() {
-		//     console.log( "ready!" );
-		//     $("input[name='nominal']").change(function(){
-		// 		// var radio = $("#results").text($("input[name='nominal']:checked").val());
-		// 		var vrupiah = rupiah.value;
-		// 		var rrupiah = vrupiah.toString().replace("Rp. ", "");
-		// 		var crupiah = rrupiah.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
-		// 		var hrupiah = crupiah.toString().replace(".", "");
-		// 		console.log(hrupiah);
-		// 		var radio = $("input[name='nominal']:checked").val();
-
-		// 		if (hrupiah) {
-		// 			var total = parseInt(radio ?? 0) + parseInt(hrupiah ?? 0);
-			
-		// 			var	reverse = total.toString().split('').reverse().join(''),
-		// 				ribuan 	= reverse.match(/\d{1,3}/g);
-		// 				ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
-
-		// 			$("#alltotal").text(ribuan);
-
-		// 		}else{
-
-		// 			var	reverse = radio.toString().split('').reverse().join(''),
-		// 				ribuan 	= reverse.match(/\d{1,3}/g);
-		// 				ribuan	= "Rp. " + ribuan.join('.').split('').reverse().join('');
-
-		// 			$("#alltotal").text(ribuan);
-
-		// 		}
-		//     });
-
-		// });
 
 	</script>
 
