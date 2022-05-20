@@ -2,139 +2,72 @@
 @section('content')
 
 <style type="text/css">
-	@media (max-width: 767px) {
-	    .carousel-inner .carousel-item > div {
-	        display: none;
-	    }
-	    .carousel-inner .carousel-item > div:first-child {
-	        display: block;
-	    }
-	}
-
-	.carousel-inner .carousel-item.active,
-	.carousel-inner .carousel-item-next,
-	.carousel-inner .carousel-item-prev {
-	    display: flex;
-	}
-
-	/* medium and up screens */
-	@media (min-width: 768px) {
-	    
-	    .carousel-inner .carousel-item-end.active,
-	    .carousel-inner .carousel-item-next {
-	      transform: translateX(25%);
-	    }
-	    
-	    .carousel-inner .carousel-item-start.active, 
-	    .carousel-inner .carousel-item-prev {
-	      transform: translateX(-25%);
-	    }
-	}
-
-	.carousel-inner .carousel-item-end,
-	.carousel-inner .carousel-item-start { 
-	  transform: translateX(0);
-	}
+	* {
+    margin: 0;
+    padding: 0;
+}
+.sel {
+    color:white;
+    width: 250px;
+    min-height: 40px;
+    box-sizing: border-box;
+    background-color: #55E6FA;
+    overflow: hidden;
+}
+.txt {
+    padding: 10px;
+}
+.selected {
+    background-color: #31A9B9;
+}
+.hide {
+    display: none;
+}
+.sel .options {
+    width: 250px;
+    background-color: #66f7FB;
+}
+.sel .options div {
+    transition: all 0.2s ease-out;
+    padding: 10px;
+}
+.sel .options div:hover {
+    background-color: #31A9B9;
+}
 </style>
-
-<div class="container text-center my-3">
-    <h2 class="font-weight-light">Bootstrap Multi Slide Carousel</h2>
-    <div class="row mx-auto my-auto justify-content-center">
-        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400/31f?text=1" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 1</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400/e66?text=2" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 2</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400?text=4" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 4</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400/aba?text=5" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 5</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="//via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 6</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </a>
-            <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </a>
-        </div>
+<div class="sel">
+    <div class='txt'>Select Option</div>
+    <div class="options hide">
+        <div>Option 1</div>
+        <div>Option 2</div>
+        <div>Option 3</div>
+        <div>Lot of text to diplay so it can expand multiple lines and expand the select main text also</div>
     </div>
-    <h5 class="mt-2 fw-light">advances one slide at a time</h5>
 </div>
-
 @endsection
 @section('script')
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
+        var sel = $('.sel'),
+            txt = $('.txt'),
+            options = $('.options');
 
-		let items = document.querySelectorAll('.carousel .carousel-item')
+        sel.click(function (e) {
+            e.stopPropagation();
+            options.show();
+        });
 
-		items.forEach((el) => {
-		    const minPerSlide = 4
-		    let next = el.nextElementSibling
-		    for (var i=1; i<minPerSlide; i++) {
-		        if (!next) {
-		            // wrap carousel by using first child
-		        	next = items[0]
-		      	}
-		        let cloneChild = next.cloneNode(true)
-		        el.appendChild(cloneChild.children[0])
-		        next = next.nextElementSibling
-		    }
-		})
+        $('body').click(function (e) {
+            options.hide();
+        });
 
+        options.children('div').click(function (e) {
+            e.stopPropagation();
+            txt.text($(this).text());
+            $(this).addClass('selected').siblings('div').removeClass('selected');
+            options.hide();
+        });
 	</script>
 
 @endsection

@@ -567,6 +567,19 @@
 								<p class="t-psw">Wakaf peduli ulama di pedalaman</p>
 								<p class="text-psw">Bencana di wilayah Jawa Tengah, Indonesia. Mereka membutuhkan makanan dan pakaia</p>
 								<input type="range" name="" min="0" value="75" max="100" step="1" class="form-control" style="padding: 5px">
+								<!-- <div id="myProgress">
+								  	<div id="myBar"></div>
+								</div>
+								#myProgress {
+								  width: 100%;
+								  background-color: grey;
+								}
+
+								#myBar {
+								  width: 1%;
+								  height: 30px;
+								  background-color: green;
+								} -->
 								<div class="row" align="center">
 									<div class="col-8" align="left">
 										<p class="text-target" style="padding-left: 5px;">Target : Rp500.000.000</p>
