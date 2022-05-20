@@ -71,5 +71,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 3. Run "cp .env.example .env" 
 	or copy .env.example .env
 4. Run php artisan key:generate
-5. Run php artisan serve
-6. Go to link localhost:8000 OR 127.0.0.1:8000
+5. Run composer dump-autoload
+6. Run php artisan serve
+7. Go to link localhost:8000 OR 127.0.0.1:8000
