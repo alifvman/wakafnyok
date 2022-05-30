@@ -18,9 +18,18 @@ class HomeController extends Controller
     {
 
         $page = 'Tentang Kami';
+        $data = array(
+            'wakaf.png',
+            'wakaf_mesjid.png',
+            'wakaf_nasional.png',
+            'bca.png',
+            'bri.png',
+            'bni.png'
+        );
         
         return view('tentang_kami')->with([
             'page'  =>  $page,
+            'data'  =>  $data,
         ]);
 
     }
