@@ -28,7 +28,7 @@
 						<img src="{{ asset('img/logo1.png') }}" class="image-fluid">
 					</a>
 					<div class="d-flex">
-						<a class="a-header p-3" href="{{ route('Home.tentang_kami') }}">Tentang Kami</a>
+						<a class="a-header p-3" href="">Tentang Kami</a>
 						<a class="a-header p-3">Kategori</a>
 						<a class="a-header p-3">Program</a>
 						<a class="a-header p-3">FAQ</a>
